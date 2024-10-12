@@ -12,6 +12,7 @@ RUN npm run build --prod
 FROM nginx:1.24-alpine
 RUN mkdir /usr/share/nginx/html/nave
 COPY --from=build /usr/src/app/dist/nave /usr/share/nginx/html/nave
-COPY --from=build /usr/src/app/nginx.conf /etc/nginx/nginx.conf
+#COPY --from=build /usr/src/app/nginx.conf /etc/nginx/nginx.conf
+COPY --from=build /usr/src/app/config/nginx.conf /etc/nginx/nginx.conf
 EXPOSE 80
 CMD ["nginx", "-g", "daemon off;"]
