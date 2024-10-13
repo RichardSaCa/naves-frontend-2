@@ -8,7 +8,7 @@ import { NaveLanzadera } from '../models/naveLanzadera.model';
 })
 export class NavesService {
 
-  apiurl = 'http://localhost:8080/api/v1';
+  apiurl = 'http://172.31.36.246:8081/api/v1';
   constructor(private http: HttpClient) {}
 
   /**
