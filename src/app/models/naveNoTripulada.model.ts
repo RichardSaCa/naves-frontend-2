@@ -1,6 +1,9 @@
+/**
+ * Modelo para naveNoTripulada hereda de nave espacial
+ */
 import { NaveEspacial } from "./naveEspacial.model";
 
-export class NaveNoTripulda extends NaveEspacial {
+export class NaveNoTripulada extends NaveEspacial {
 
   tipoCombustible: string;
   toneladasEmpuje: number;

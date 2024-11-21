@@ -1,11 +1,18 @@
-<p>Prueba de naves espaciales</p>
+<h1>FILTRO DE NAVES</h1>
+<input type="text" [(ngModel)]="texto" (ngModelChange)="onInputChange($event)">
+<h2>Naves tipo Lanzadera</h2>
 <table class="table">
   <thead>
     <tr>
-      <th scope="col">#</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Handle</th>
+      <th scope="col">Id</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Potencia</th>
+      <th scope="col">país</th>
+      <th scope="col">peso</th>
+      <th scope="col">Objeto que lanza</th>
+      <th scope="col">Tipo Combustible</th>
+      <th scope="col">Peso transporte</th>
+
     </tr>
   </thead>
   <tbody>
@@ -13,9 +20,90 @@
       <tr>
         <th scope="row">{{item.idNaveEspacial}}</th>
         <td>{{item.nombre}}</td>
+        <td>{{item.potencia}}</td>
+        <td>{{item.pais}}</td>
+        <td>{{item.peso}}</td>
         <td>{{item.objetoLanza}}</td>
-        <td>g</td>
-      </tr>
+        <td>{{item.tipoCombustible}}</td>
+        <td>{{item.pesoTransporte}}</td>
+
     }
   </tbody>
 </table>
+
+<h2>Naves No tripuladas</h2>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Potencia</th>
+      <th scope="col">país</th>
+      <th scope="col">peso</th>
+      <th scope="col">tipo Combustible</th>
+      <th scope="col">Toneladas empuje</th>
+      <th scope="col">mision</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    @for (item of navesNoTripuladas; track $index) {
+      <tr>
+        <th scope="row">{{item.idNaveEspacial}}</th>
+        <td>{{item.nombre}}</td>
+        <td>{{item.potencia}}</td>
+        <td>{{item.pais}}</td>
+        <td>{{item.peso}}</td>
+        <td>{{item.tipoCombustible}}</td>
+        <td>{{item.toneladasEmpuje}}</td>
+        <td>{{item.mision}}</td>
+
+    }
+  </tbody>
+</table>
+
+<h2>Naves Tripuladas</h2>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Potencia</th>
+      <th scope="col">país</th>
+      <th scope="col">peso</th>
+      <th scope="col">mision</th>
+      <th scope="col">Numero Tripulantes</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    @for (item of navesTripuladas; track $index) {
+      <tr>
+        <th scope="row">{{item.idNaveEspacial}}</th>
+        <td>{{item.nombre}}</td>
+        <td>{{item.potencia}}</td>
+        <td>{{item.pais}}</td>
+        <td>{{item.peso}}</td>
+        <td>{{item.mision}}</td>
+        <td>{{item.numeroTripulantes}}</td>
+
+    }
+  </tbody>
+</table>
+
+
+<!-- <div class="accordion accordion-flush" id="accordionFlushExample">
+  @for (item of navesLanzaderas; track $index) {
+
+    <div class="accordion-item">
+      <h2 class="accordion-header">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="'#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapse"{{$index}}>
+          {{item.nombre}}
+        </button>
+      </h2>
+      <div id="flush-collapse"{{$index}} class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+        <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the first item's accordion body.</div>
+      </div>
+    </div>
+  }
+</div> -->

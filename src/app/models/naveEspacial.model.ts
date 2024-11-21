@@ -1,3 +1,6 @@
+/**
+ * Modelo para representar NaveEspacial, esta la clase padre
+ */
 export class NaveEspacial {
 
   idNaveEspacial: number;

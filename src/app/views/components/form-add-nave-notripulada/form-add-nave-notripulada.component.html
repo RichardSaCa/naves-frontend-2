@@ -1,0 +1,114 @@
+<form id="contact-form" (ngSubmit)="addNave()" role="form" #naveForm="ngForm">
+  <div class="mb-3">
+    <div class="form-group">
+      <label for="nombre">Nombre *</label>
+      <input id="nombre" type="text" name="nombre" class="form-control"
+        placeholder="Please enter name*" required="required" data-="description is required."
+        [(ngModel)] ="naveNoTripulada.nombre" #nombre="ngModel"
+        [class]="{'is-invalid':nombre.invalid && nombre.touched}" minlength="3" maxlength="15">
+
+      @if (nombre.errors?.['required'] && nombre.touched){
+      <span class="text-danger">description is required</span>
+      } @else if (nombre.errors?.['minlength'] && nombre.touched){
+      <span class="text-danger">description must be at least 3 characters long.</span>
+      }
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <div class="form-group">
+      <label for="potencia">potencia *</label>
+      <input id="potencia" type="number" name="potencia" class="form-control"
+        placeholder="Please enter potencia*" required="required" data-="description is required."
+        [(ngModel)]="naveNoTripulada.potencia"  #potencia="ngModel" required>
+        @if (potencia.errors?.['required'] && potencia.touched){
+        <span class="text-danger">power is required</span>
+        } @else if (potencia.errors?.['pattern'] && potencia.touched){
+        <span class="text-danger">
+          price:From mayor 0</span>
+        }
+
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <div class="form-group">
+      <label for="pais">pais *</label>
+      <input id="pais" type="text" name="pais" class="form-control"
+        placeholder="Please enter pais*" required="required" data-="description is required."
+        [(ngModel)] ="naveNoTripulada.pais" #pais="ngModel"
+        [class]="{'is-invalid':pais.invalid && pais.touched}" minlength="3" maxlength="15">
+
+      @if (pais.errors?.['required'] && pais.touched){
+      <span class="text-danger">pais is required</span>
+      } @else if (pais.errors?.['minlength'] && pais.touched){
+      <span class="text-danger">pais must be at least 3 characters long.</span>
+      }
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <div class="form-group">
+      <label for="peso">peso *</label>
+      <input id="peso" type="number" name="peso" class="form-control"
+        placeholder="Please enter peso*" required="required" data-="description is required."
+        [(ngModel)]="naveNoTripulada.peso"  #peso="ngModel" required>
+        @if (peso.errors?.['required'] && peso.touched){
+        <span class="text-danger">power is required</span>
+        } @else if (peso.errors?.['pattern'] && peso.touched){
+        <span class="text-danger">
+          price:From mayor 0</span>
+        }
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <div class="form-group">
+      <label for="tipoCombustible">tipoCombustible *</label>
+      <input id="tipoCombustible" type="text" name="tipoCombustible" class="form-control"
+        placeholder="Please enter tipoCombustible*" required="required" data-="description is required."
+        [(ngModel)] ="naveNoTripulada.tipoCombustible" #tipoCombustible="ngModel"
+        [class]="{'is-invalid':tipoCombustible.invalid && tipoCombustible.touched}" minlength="3" maxlength="15">
+
+      @if (tipoCombustible.errors?.['required'] && tipoCombustible.touched){
+      <span class="text-danger">tipoCombustible is required</span>
+      } @else if (tipoCombustible.errors?.['minlength'] && tipoCombustible.touched){
+      <span class="text-danger">tipoCombustible must be at least 3 characters long.</span>
+      }
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <div class="form-group">
+      <label for="toneladasEmpuje">toneladasEmpuje *</label>
+      <input id="toneladasEmpuje" type="number" name="toneladasEmpuje" class="form-control"
+        placeholder="Please enter toneladasEmpuje*" required="required" data-="description is required."
+        [(ngModel)]="naveNoTripulada.toneladasEmpuje"  #toneladasEmpuje="ngModel" required>
+        @if (toneladasEmpuje.errors?.['required'] && toneladasEmpuje.touched){
+        <span class="text-danger">power is required</span>
+        } @else if (toneladasEmpuje.errors?.['pattern'] && toneladasEmpuje.touched){
+        <span class="text-danger">
+          price:From mayor 0</span>
+        }
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <div class="form-group">
+      <label for="mision">mision *</label>
+      <input id="mision" type="text" name="mision" class="form-control"
+        placeholder="Please enter mision*" required="required" data-="description is required."
+        [(ngModel)] ="naveNoTripulada.mision" #mision="ngModel"
+        [class]="{'is-invalid':mision.invalid && mision.touched}" minlength="3" maxlength="15">
+
+      @if (mision.errors?.['required'] && mision.touched){
+      <span class="text-danger">mision is required</span>
+      } @else if (mision.errors?.['minlength'] && mision.touched){
+      <span class="text-danger">mision must be at least 3 characters long.</span>
+      }
+    </div>
+  </div>
+
+  <button type="submit" class="btn btn-primary"  [disabled]="naveForm.invalid">guardar</button>
+</form>
+

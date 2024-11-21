@@ -1,3 +1,6 @@
+/**
+ * Modelo para naveLanzadera, hereda de naveEspacial
+ */
 import { NaveEspacial } from "./naveEspacial.model";
 
 export class NaveLanzadera extends NaveEspacial {
@@ -15,4 +18,5 @@ pesoTransporte: number;
     this.tipoCombustible = tipoCombustible;
     this.pesoTransporte = pesoTransporte;
   }
+
 }
