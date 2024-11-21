@@ -12,7 +12,7 @@ import { NaveTripulada } from '../models/naveTripulada.model';
 })
 export class NavesService {
 
-  apiurl = 'http://18.216.76.195/:8081/api/v1';
+  apiurl = 'http://18.216.76.195:8081/api/v1';
   //apiurl = 'http://localhost:8080/api/v1';
   constructor(private http: HttpClient) {}
 
